@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Quiz</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            flex-direction: column; 
+        }
+
+        html {
+            background-color: #0f0f56;
+        }
+
+        h1 {
+            padding: 15px 0px;
+            margin: 10px 2%;
+            border: solid 3px cyan;
+            border-radius: 25px 5px;
+            background-color: blue;
+            color: white;
+            box-shadow: inset 0px 30px 40px -5px cornflowerblue;
+            text-align: center;
+        }
+
+        .options {
+            padding: 15px 0px;
+            margin: 5px 10%;
+            border: solid 3px cyan;
+            border-radius: 25px 0px;
+            background-color: blue;
+            color: white;
+            text-align: center;
+            box-shadow: inset 0px 30px 40px -5px cornflowerblue;
+        }
+
+        .question {
+            margin: 30px 0px;
+            display: grid;
+            grid-template-columns: auto auto;
+        }
+
+        .container {
+            border: 2px solid white;
+            border-radius: 10px;
+            margin: 45px 10px;
+            padding: 15px 0px 3px 0px;
+            width: 90%;
+        }
+
+        button {
+            background-color: darkblue;
+            padding: 10px;
+            color: white;
+            border: 3px solid cyan;
+            font-size: large;
+            border-radius: 8px;
+        }
+        input{
+            display: none;
+        }
+        input:checked{
+            display: inline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>What's HTML stands for?</h1>
+        <div class="question">
+            <label class="options" id="Q1OP1">
+                <input type="radio" name="option1" id="Q1O1">
+                Hyper Text Markup Language
+            </label>
+            <label class="options" id="Q1OP2">
+                <input type="radio" name="option1" id="Q1O2">
+                Hyper Text Markup Leveler
+            </label>
+        </div>
+    </div>
+    <div class="container">
+        <h1>Do while and While loop are same</h1>
+        <div class="question">
+            <label class="options" id="Q2OP1">
+                <input type="radio" name="option2" id="Q2O1">
+                False
+            </label>
+            <label class="options" id="Q2OP2">
+                <input type="radio" name="option2" id="Q2O2">
+                True
+            </label>
+        </div>
+    </div>
+    <div class="container">
+        <h1>What does this mean? A!= T</h1>
+        <div class="question">
+            <label class="options" id="Q3OP1">
+                <input type="radio" name="option3" id="Q3O1">
+                A is asinged to T
+            </label>
+            <label class="options" id="Q3OP2">
+                <input type="radio" name="option3" id="Q3O2">
+                A and T are not equal
+            </label>
+        </div>
+    </div>
+    <div class="container">
+        <h1>What is c++</h1>
+        <div class="question">
+            <label class="options" id="Q4OP1">
+                <input type="radio" name="option4" id="Q4O1">
+                Object-oriented programming
+            </label>
+            <label class="options" id="Q4OP2">
+                <input type="radio" name="option4" id="Q4O2">
+                Compile programming
+            </label>
+        </div>
+    </div>
+    <div class="container">
+        <h1>The smallest unit of information a computer can understand is known as</h1>
+        <div class="question">
+            <label class="options" id="Q5OP1">
+                <input type="radio" name="option5" id="Q5O1">
+                Byte
+            </label>
+            <label class="options" id="Q5OP2">
+                <input type="radio" name="option5" id="Q5O2">
+                Bit
+            </label>
+        </div>
+    </div>
+    <button onclick="submit()">submit </button>
+    <script>
+        function submit() {
+            let i = 0;
+            console.log("submitted");
+            if (document.getElementById("Q1O1").checked) {
+                document.getElementById("Q1OP1").style.backgroundColor = "green";
+                document.getElementById("Q1OP1").style.boxShadow = 'none';
+                i = i + 1;
+            }
+            else {
+                document.getElementById("Q1OP2").style.backgroundColor = "red"
+                document.getElementById("Q1OP2").style.boxShadow = 'none';
+            }
+
+            if (document.getElementById("Q2O1").checked) {
+                document.getElementById("Q2OP1").style.backgroundColor = "green";
+                document.getElementById("Q2OP1").style.boxShadow = 'none';
+                i = i + 1;
+            }
+            else {
+                document.getElementById("Q2OP2").style.backgroundColor = "red"
+                document.getElementById("Q2OP2").style.boxShadow = 'none';
+            }
+
+            if (document.getElementById("Q3O2").checked) {
+                i = i + 1;
+                document.getElementById("Q3OP2").style.backgroundColor = "green";
+                document.getElementById("Q3OP2").style.boxShadow = 'none';
+            }
+            else {
+                document.getElementById("Q3OP1").style.backgroundColor = "red"
+                document.getElementById("Q3OP1").style.boxShadow = 'none';
+            }
+
+            if (document.getElementById("Q4O1").checked) {
+                i = i + 1;
+                document.getElementById("Q4OP1").style.backgroundColor = "green";
+                document.getElementById("Q4OP1").style.boxShadow = 'none';
+            }
+            else {
+                document.getElementById("Q4OP2").style.backgroundColor = "red"
+                document.getElementById("Q4OP2").style.boxShadow = 'none';
+                
+            }
+
+            if (document.getElementById("Q5O2").checked) {
+                i = i + 1;
+                document.getElementById("Q5OP2").style.backgroundColor = "green";
+                document.getElementById("Q5OP2").style.boxShadow = 'none';
+            }
+            else {
+                document.getElementById("Q5OP1").style.backgroundColor = "red"
+                document.getElementById("Q5OP1").style.boxShadow = 'none';
+            }
+            setTimeout(() => {
+                alert("YOUR SCORE IS :  " + i +"/5")
+            }, 1000);
+            setTimeout(() => {
+                location.reload();
+            }, 8000);
+        }
+    </script>
+</body>
+
+</html>
